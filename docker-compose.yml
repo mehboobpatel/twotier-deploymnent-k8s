@@ -12,12 +12,12 @@ services:
       - "5002:5000"
     networks:
       - twotier
-    depends_on:
-      - dbcont
+    depends_on:  # this will ensure that the second container is first started and than this one
+      - dbcont  #hostname 2nd container
 
   dbcont:       #host nameMYSQL_HOS
     image: mysql:5.7
-    container_name: dbcont
+    container_name: dbcont #host name 2ndcontainer
     ports:
       - "3306:3306"
     env_file:
