@@ -5,6 +5,7 @@ services:
     build:
       context: .
     container_name: compflask
+    image: mehboobpatel/microservflask
     env_file:
       - mysql.env
     ports:

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: two-tier-app
+  name: flaskmysql
   labels:
     app: two-tier-app
 spec:
@@ -19,7 +19,7 @@ spec:
           image: trainwithshubham/flaskapp:latest
           env:
             - name: MYSQL_HOST
-              value: "10.98.19.211"          # this is your mysql's service clusture IP, Make sure to change it with yours
+              value: "10.98.22.39"          # this is your mysql's service clusture IP, Make sure to change it with yours
             - name: MYSQL_PASSWORD
               value: "admin"
             - name: MYSQL_USER
