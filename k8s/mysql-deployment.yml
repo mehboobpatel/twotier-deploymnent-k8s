@@ -21,7 +21,8 @@ spec:
             - name: MYSQL_ROOT_PASSWORD
               value: "admin"
             - name: MYSQL_DATABASE
-              value: "mydb"
+              value: "lol"        #anyname u can give but it will be permnt since in pv and pvc u have given accessm
+                                 #access mode is ReadWriteOnce
             - name: MYSQL_USER
               value: "admin"
             - name: MYSQL_PASSWORD
@@ -29,9 +30,9 @@ spec:
           ports:
             - containerPort: 3306
           volumeMounts:
-            - name: mysqldata2
+            - name: nol   #folder u defined in PV
               mountPath: /var/lib/mysql         # this is your container path from where your data will be stored
       volumes:
-        - name: mysqldata2
+        - name: nol  #folder u defined in PV
           persistentVolumeClaim:
             claimName: abc    # PVC claim name

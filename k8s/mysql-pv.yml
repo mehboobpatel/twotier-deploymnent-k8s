@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: xyz
+  name: xyz #PV name
 spec:
   capacity:
     storage: 256Mi
   volumeMode: Filesystem
-  storageClassName: standard
+  storageClassName: standard #must
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
-  hostPath:
-    path: /home/maheboob/Documents/k8snotes/flaskmysql/mysqldata2        #This is your host path where your data will be stored. Make sure to create mysqldata directory in mentioned path
+  persistentVolumeReclaimPolicy: Retain #this makes the data persist
+  hostPath:  #mysqldata2 or any name of folder
+    path: /home/maheboob/Documents/k8snotes/flaskmysql/nol        #This is your host path where your data will be stored. Make sure to create mysqldata directory in mentioned path
